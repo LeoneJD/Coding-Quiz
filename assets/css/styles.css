@@ -1,17 +1,16 @@
 :root {
-  /* Feminine Color Palette */
-  --primary-color: #ff85a2;  /* Soft Pink */
-  --secondary-color: #ffd6e8; /* Light Pink */
-  --accent-color: #f8c6fe;  /* Lavender */
-  --background-color: #fff0f5; /* Lavender Blush */
-  --text-color: #444; /* Soft Black */
-  --button-hover-color: #ff629d; /* Darker Pink */
+  /* Color Palette */
+  --primary-color: #6200ea;  /* Vibrant Purple */
+  --secondary-color: #03dac6; /* Teal */
+  --accent-color: #ff0266;  /* Pink */
+  --background-color: #fdfbff; /* Light Off-White */
+  --text-color: #212121; /* Almost Black */
+  --button-hover-color: #3700b3; /* Dark Purple */
 
   /* Typography */
-  --font-family: 'Cormorant Garamond', serif;
-  --font-family-secondary: 'Montserrat', sans-serif;
+  --font-family: 'Poppins', sans-serif;
   --font-size-base: 16px;
-  --heading-font-weight: 500;
+  --heading-font-weight: 600;
   --text-font-weight: 400;
 
   /* Spacing */
@@ -22,7 +21,7 @@
 }
 
 body {
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family);
   background-color: var(--background-color);
   color: var(--text-color);
   font-size: var(--font-size-base);
@@ -32,16 +31,15 @@ body {
 
 .wrapper {
   max-width: 800px;
-  margin: var(--space-xl) auto;
+  margin: 0 auto;
   padding: var(--space-lg);
   background-color: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
 }
 
 h1, h2 {
   color: var(--primary-color);
-  font-family: var(--font-family);
   font-weight: var(--heading-font-weight);
 }
 
@@ -51,31 +49,30 @@ button {
   border: none;
   padding: var(--space-md) var(--space-lg);
   font-size: 1rem;
-  border-radius: 25px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: var(--button-hover-color);
-  transform: scale(1.05);
 }
 
 .choices button {
+  width: 100%;
+  margin-bottom: var(--space-md);
   background-color: var(--secondary-color);
-  color: var(--text-color);
-  margin-bottom: var(--space-sm);
+  transition: transform 0.2s ease;
 }
 
-#questions .choices button {
-  width: 100%;
-  text-align: left;
-  padding-left: 20px;
+.choices button:hover {
+  transform: translateY(-3px);
 }
 
 .feedback {
-  font-style: italic;
   margin-top: var(--space-md);
+  font-weight: var(--text-font-weight);
+  text-align: center;
 }
 
 .correct {
@@ -83,7 +80,7 @@ button:hover {
 }
 
 .incorrect {
-  color: #ff6b8a; /* Soft Red */
+  color: #f44336; /* Red */
 }
 
 /* Responsive Design */
@@ -106,8 +103,16 @@ button:hover {
   background-color: var(--secondary-color);
   color: var(--text-color);
   padding: var(--space-sm);
-  border-radius: 10px;
-  list-style-type: none;
   margin-bottom: var(--space-sm);
+  list-style-type: none;
+  border-radius: 4px;
 }
 
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: var(--space-xl);
+}
